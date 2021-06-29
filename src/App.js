@@ -1,7 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import logo from './assets/images/logo.svg';
+import './assets/css/App.css';
+
+
+//Importar MiComponente
+
+import MiComponente from './components/MiComponente';
+
+
+function HolaMundo(nombre,edad){
+   var presentacion = (
+   <div>
+     <h2> Hola, soy {nombre}</h2>
+     <h3> Tengo {edad} años</h3>
+   </div>
+   );
+
+   return presentacion;
+}
 
 function App() {
+
+  var nombre = "Ignacio";
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,15 +31,22 @@ function App() {
         <p>
           App React Js basica
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        {HolaMundo(nombre,28)}
+
+        <section className="componentes">
+       
+       <MiComponente />
+       
+       </section>
+      
+
+
+      
       </header>
+
+      
+
     </div>
   );
 }
